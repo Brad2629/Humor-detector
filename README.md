@@ -1,66 +1,50 @@
-🤖 Humor Detection with Deep Learning
-This project explores the use of deep learning to classify short text snippets as humorous or non-humorous. Using a dataset of 200,000 labeled texts from Kaggle, I trained a bidirectional LSTM model with word embeddings to detect humor in sentences. The final model achieves an accuracy of 93.4% on the validation set.
+# 🤖 Humor Detection with Deep Learning
 
-📂 Dataset
-Source: 200K Short Texts for Humor Detection
+This project explores the use of deep learning to classify short text snippets as humorous or non-humorous. Using a dataset of 200,000 labeled texts from Kaggle, I trained a bidirectional LSTM model with word embeddings to detect humor in sentences. The final model achieves an accuracy of **93.4%** on the validation set.
 
-Size: 200,000 text samples equally split between humorous and non-humorous
+## 📂 Dataset
 
-🧠 Model Architecture
-Tokenization and padding with Keras
+- **Source**: [200K Short Texts for Humor Detection](https://www.kaggle.com/datasets/deepcontractor/200k-short-texts-for-humor-detection)
+- **Size**: 200,000 text samples equally split between humorous and non-humorous
 
-Custom embedding matrix with 250 dimensions
+## 🧠 Model Architecture
 
-Bidirectional LSTM + TimeDistributed layer
+- Tokenization and padding with Keras
+- Custom embedding matrix with 250 dimensions
+- Bidirectional LSTM + TimeDistributed layer
+- Final Dense layers with softmax activation
+- Loss: Sparse Categorical Crossentropy
+- Optimizer: Adam
 
-Final Dense layers with softmax activation
+## 📈 Performance
 
-Loss: Sparse Categorical Crossentropy
+- **Validation Accuracy**: 93.4%
+- **Precision/Recall/F1**:
+  - Humorous: 0.94 / 0.93 / 0.934
+  - Non-Humorous: 0.93 / 0.94 / 0.935
 
-Optimizer: Adam
+## 📊 Visualizations
 
-📈 Performance
-Validation Accuracy: 93.4%
+- Pie chart showing balanced dataset
+- Histograms of text length
+- Word clouds for humorous vs. non-humorous text
+- Confusion matrix heatmap
+- Accuracy/loss graphs across 20 training epochs
 
-Precision/Recall/F1:
+## 🧪 Sample Predictions
 
-Humorous: 0.94 / 0.93 / 0.934
-
-Non-Humorous: 0.93 / 0.94 / 0.935
-
-📊 Visualizations
-Pie chart showing balanced dataset
-
-Histograms of text length
-
-Word clouds for humorous vs. non-humorous text
-
-Confusion matrix heatmap
-
-Accuracy/loss graphs across 20 training epochs
-
-🧪 Sample Predictions
 Example input sentences and their predicted humor classification:
 
-plaintext
-Copy
-Edit
+```plaintext
 "I told my wife she was drawing her eyebrows too high; she looked surprised."
 → Humor detected: True
 
 "The cat slept peacefully on the warm windowsill."
 → Humor detected: False
-🚀 How to Use
-Clone this repo and install the required dependencies.
+```
 
-Download the dataset from Kaggle and place it in the root directory as dataset.csv.
+## 🔮 Future Work
 
-Run the notebook or script to preprocess data, train the model, and make predictions.
-
-🔮 Future Work
-Explore transformer-based models (e.g., BERT)
-
-Integrate part-of-speech tagging or semantic analysis
-
-Improve prediction confidence and filtering
-
+- Explore transformer-based models (e.g., BERT)
+- Integrate part-of-speech tagging or semantic analysis
+- Improve prediction confidence and filtering
