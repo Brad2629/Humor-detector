@@ -1,50 +1,66 @@
-# Humor Detection Using NLP and Deep Learning
+🤖 Humor Detection with Deep Learning
+This project explores the use of deep learning to classify short text snippets as humorous or non-humorous. Using a dataset of 200,000 labeled texts from Kaggle, I trained a bidirectional LSTM model with word embeddings to detect humor in sentences. The final model achieves an accuracy of 93.4% on the validation set.
 
-This project focuses on detecting humor in short texts using both traditional preprocessing techniques and transformer-based models. The dataset consists of 200,000 labeled text samples from Kaggle, evenly split between humorous and non-humorous content.
+📂 Dataset
+Source: 200K Short Texts for Humor Detection
 
-## 📊 Dataset
+Size: 200,000 text samples equally split between humorous and non-humorous
 
-- **Source:** [Kaggle - 200K Short Texts for Humor Detection](https://www.kaggle.com/datasets/deepcontractor/200k-short-texts-for-humor-detection)
-- **Size:** 200,000 entries (100,000 humorous, 100,000 not humorous)
-- **Format:** CSV with two main columns: `text` and `humor` (boolean)
+🧠 Model Architecture
+Tokenization and padding with Keras
 
-## 🧠 Methods
+Custom embedding matrix with 250 dimensions
 
-The project explores two major approaches:
+Bidirectional LSTM + TimeDistributed layer
 
-### 1. Traditional Deep Learning (Keras)
-- **Preprocessing:** Tokenization, lowercasing, filtering of special characters
-- **Embedding:** Keras Embedding layer
-- **Model:** LSTM-based sequential neural network
-- **Training:** Binary classification with accuracy and loss metrics
+Final Dense layers with softmax activation
 
-### 2. Transformer-Based Classification (BERT)
-- **Tokenizer:** `BertTokenizer`
-- **Model:** `BertForSequenceClassification` from HuggingFace Transformers
-- **Training:** Using `Trainer` API with GPU acceleration
-- **Evaluation:** Classification report and confusion matrix
+Loss: Sparse Categorical Crossentropy
 
-## 📈 Results
+Optimizer: Adam
 
-- Clear distinction between humorous and non-humorous text
-- BERT-based model significantly outperforms the LSTM model in accuracy and F1-score
-- WordClouds and pie charts used for basic exploratory data analysis
+📈 Performance
+Validation Accuracy: 93.4%
 
-## 🧰 Libraries Used
+Precision/Recall/F1:
 
-- Pandas, NumPy, Matplotlib, Seaborn
-- TensorFlow/Keras
-- HuggingFace Transformers
-- Scikit-learn
+Humorous: 0.94 / 0.93 / 0.934
 
-## 🔍 Key Insights
+Non-Humorous: 0.93 / 0.94 / 0.935
 
-- Humor detection is feasible with modern NLP tools
-- Pretrained language models like BERT yield higher performance than traditional approaches
-- Careful preprocessing and balanced data improve model reliability
+📊 Visualizations
+Pie chart showing balanced dataset
 
-## 👤 Author
+Histograms of text length
 
-**Bradley Paliska**  
-`bp355` — Cornell University
+Word clouds for humorous vs. non-humorous text
+
+Confusion matrix heatmap
+
+Accuracy/loss graphs across 20 training epochs
+
+🧪 Sample Predictions
+Example input sentences and their predicted humor classification:
+
+plaintext
+Copy
+Edit
+"I told my wife she was drawing her eyebrows too high; she looked surprised."
+→ Humor detected: True
+
+"The cat slept peacefully on the warm windowsill."
+→ Humor detected: False
+🚀 How to Use
+Clone this repo and install the required dependencies.
+
+Download the dataset from Kaggle and place it in the root directory as dataset.csv.
+
+Run the notebook or script to preprocess data, train the model, and make predictions.
+
+🔮 Future Work
+Explore transformer-based models (e.g., BERT)
+
+Integrate part-of-speech tagging or semantic analysis
+
+Improve prediction confidence and filtering
 
